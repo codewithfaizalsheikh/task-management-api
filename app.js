@@ -5,11 +5,15 @@ const cors = require("cors");
 const taskRoutes = require("./src/routes/taskRoutes");
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
+const notFoundHandler = require("./src/middlewares/notFoundHandler");
+const errorHandler = require("./src/middlewares/errorHandler");
 require("dotenv").config();
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/task", taskRoutes);
+// app.use(notFoundHandler);
+app.use(errorHandler);
 
 const swaggerOptions = {
   swaggerDefinition: {
@@ -32,8 +36,6 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-// app.use(require("./middlewares/errorHandle"));
-
 const PORT = 5050;
 const DB_URI = process.env.DB_URI;
 
@@ -48,6 +50,10 @@ mongoose
 
 app.listen(PORT, () => {
   console.log(`Backend is running on port ${PORT}`);
+});
+
+app.get("/", (req, res) => {
+  res.send("Welcome to task managemet system!");
 });
 
 module.exports = app;

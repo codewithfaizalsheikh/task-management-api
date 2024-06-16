@@ -7,12 +7,12 @@ exports.createTask = async (req, res) => {
       console.log("Title error");
       return res
         .status(400)
-        .send({ statusCode: 400, message: "Title is required" });
+        .send({ statusCode: 400, error: "Title is required" });
     }
     if (!req.body.description || req.body.description === "") {
       return res
         .status(400)
-        .send({ statusCode: 400, message: "Description is required" });
+        .send({ statusCode: 400, error: "Description is required" });
     }
 
     const task = await Task.create(req.body); //create task
@@ -43,6 +43,12 @@ exports.getAllTasks = async (req, res) => {
 // Retrieve a task by its ID
 exports.getTaskById = async (req, res) => {
   try {
+    if (!req.params.id) {
+      return res
+        .status(400)
+        .send({ statusCode: 400, error: "Id nor found or Invalid Id" });
+    }
+
     const task = await Task.findById(req.params.id); //fetch data by id
     if (!task) {
       return res.status(404).send({ error: "Task not found" });
@@ -60,6 +66,12 @@ exports.getTaskById = async (req, res) => {
 // Update a task by its ID
 exports.updateTaskById = async (req, res) => {
   try {
+    if (!req.params.id) {
+      return res
+        .status(400)
+        .send({ statusCode: 400, error: "Id nor found or Invalid Id" });
+    }
+
     const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true,
@@ -80,6 +92,12 @@ exports.updateTaskById = async (req, res) => {
 // Delete a task by its ID
 exports.deleteTaskById = async (req, res) => {
   try {
+    if (!req.params.id) {
+      return res
+        .status(400)
+        .send({ statusCode: 400, error: "Id nor found or Invalid Id" });
+    }
+
     const task = await Task.findByIdAndDelete(req.params.id); // delete by id
     if (!task) {
       return res.status(404).send({ error: "Task not found" });
@@ -97,6 +115,11 @@ exports.deleteTaskById = async (req, res) => {
 // change status
 exports.taskStatus = async (req, res) => {
   try {
+    if (!req.params.id) {
+      return res
+        .status(400)
+        .send({ statusCode: 400, error: "Id nor found or Invalid Id" });
+    }
     const status = await Task.findByIdAndUpdate(
       req.params.id,
       { status: req.body.status },
