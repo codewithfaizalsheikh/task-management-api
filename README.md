@@ -19,7 +19,7 @@ A robust and scalable RESTful API for a task management system built with Node.j
 - Mongoose
 - Express-validator
 - Swagger
-- Mocha & Chai for testing
+- jest for testing
 
 ## Table of Contents
 
