@@ -3,21 +3,25 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const taskRoutes = require("./src/routes/taskRoutes");
+const userRoutes = require("./src/routes/userRoutes");
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
 const notFoundHandler = require("./src/middlewares/notFoundHandler");
 const errorHandler = require("./src/middlewares/errorHandler");
+const authMiddleware = require("./src/middlewares/authMiddleware");
 require("dotenv").config();
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+// app.use("/task", authMiddleware);
 app.use("/task", taskRoutes);
+app.use("/user", userRoutes);
 // app.use(notFoundHandler);
 app.use(errorHandler);
 
 const swaggerOptions = {
   swaggerDefinition: {
-    openapi: "3.0.0", // Add OpenAPI version
+    openapi: "3.0.0",
     info: {
       title: "Task Management API",
       version: "1.0.0",
@@ -26,6 +30,20 @@ const swaggerOptions = {
     servers: [
       {
         url: "http://localhost:5050",
+      },
+    ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
+    security: [
+      {
+        bearerAuth: [],
       },
     ],
   },

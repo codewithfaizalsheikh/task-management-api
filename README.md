@@ -97,7 +97,8 @@ http://localhost:5050/api-docs
 
 ```bash
 DB_URI=mongodb://localhost:27017/task-management
-PORT=5000
+PORT=5050
+SECRET=taskManagement
 ```
 
 ## Postman Collection

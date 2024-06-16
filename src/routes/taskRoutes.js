@@ -1,6 +1,7 @@
 const express = require("express");
 const taskController = require("../controllers/taskController");
 const router = express.Router();
+const authMiddleware = require("../middlewares/authMiddleware");
 
 /**
  * @swagger
@@ -44,7 +45,7 @@ const router = express.Router();
  *       500:
  *         description: Internal serval error
  */
-router.post("/add", taskController.createTask);
+router.post("/add", authMiddleware, taskController.createTask);
 
 /**
  * @swagger
@@ -58,7 +59,7 @@ router.post("/add", taskController.createTask);
  *       500:
  *         description: Server error
  */
-router.get("/get", taskController.getAllTasks);
+router.get("/get", authMiddleware, taskController.getAllTasks);
 
 /**
  * @swagger
