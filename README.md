@@ -85,7 +85,7 @@ npm test
 ## API Documentation
 
 ```bash
-http://localhost:5000/api-docs
+http://localhost:5050/api-docs
 ```
 
 ## Environment Variables
