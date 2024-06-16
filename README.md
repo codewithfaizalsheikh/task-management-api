@@ -27,7 +27,6 @@ A robust and scalable RESTful API for a task management system built with Node.j
 - [Running the Server](#running-the-server)
 - [Running Tests](#running-tests)
 - [API Documentation](#api-documentation)
-- [Postman Collection](#postman-collection)
 - [Environment Variables](#environment-variables)
 
 ## Installation
