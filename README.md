@@ -29,15 +29,13 @@ A robust and scalable RESTful API for a task management system built with Node.j
 - [API Documentation](#api-documentation)
 - [Postman Collection](#postman-collection)
 - [Environment Variables](#environment-variables)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
 ### Prerequisites
 
 - Node.js (v12 or later)
-- MongoDB (running locally or a DB_URI)
+- MongoDB (running locally or a MongoDB URI)
 
 ### Steps
 
@@ -73,10 +71,13 @@ To start the server, run:
 
 ```bash
 npm start
+```
+
+```bash
 nodemon
 ```
 
-## API Documentation
+## Running Tests
 
 ```bash
 npm test
