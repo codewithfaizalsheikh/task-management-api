@@ -61,8 +61,10 @@ A robust and scalable RESTful API for a task management system built with Node.j
 
 4. Create a `.env` file in the root directory and add your MongoDB URI:
    ```env
-   DB_URI=your_mongodb_uri
-   SECRET=yoursecretkey
+   DB_URI=mongodb://localhost:27017/task-management
+   SECRET=taskManagement
+   SWAGGER_URL=http://localhost:5050
+   SWAGGER_DESC = Local Development Server
    ```
 
 ## Running the Server
@@ -97,7 +99,9 @@ http://localhost:5050/api-docs
 
 ```bash
 DB_URI=mongodb://localhost:27017/task-management
-SECRET=yoursecretkey
+SECRET=taskManagement
+SWAGGER_URL=http://localhost:5050
+SWAGGER_DESC = Local Development Server
 ```
 
 ## Postman Collection
@@ -110,3 +114,19 @@ A Postman collection is included to help you test the API. Import the TaskManage
 2. Click on the Import button.
 3. Select the TaskManager.postman_collection.json file.
 4. Click Open to import.
+
+## Deployment
+
+The API is deployed on an AWS EC2 instance. You can access the deployed API at:
+
+```bash
+http://16.171.19.237/
+```
+
+### Accessing Swagger Documentation on Deployment
+
+Visit the following URL to access the Swagger documentation for the deployed API:
+
+```bash
+http://16.171.19.237/api-docs
+```
