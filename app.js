@@ -12,12 +12,14 @@ const authMiddleware = require("./src/middlewares/authMiddleware");
 require("dotenv").config();
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+const corsOptions = {
+  origin: "*", // Allow only this origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allow these methods
+  credentials: true, // Enable cookies
+  optionsSuccessStatus: 204, // Response status for successful OPTIONS requests
+};
+
+app.use(cors(corsOptions));
 
 // app.use("/task", authMiddleware);
 app.use("/task", taskRoutes);
