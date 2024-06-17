@@ -110,3 +110,19 @@ A Postman collection is included to help you test the API. Import the TaskManage
 2. Click on the Import button.
 3. Select the TaskManager.postman_collection.json file.
 4. Click Open to import.
+
+## Deployment
+
+The API is deployed on an AWS EC2 instance. You can access the deployed API at:
+
+```bash
+http://16.171.19.237/
+```
+
+### Accessing Swagger Documentation on Deployment
+
+Visit the following URL to access the Swagger documentation for the deployed API:
+
+```bash
+http://16.171.19.237/api-docs
+```

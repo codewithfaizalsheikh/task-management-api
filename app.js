@@ -13,6 +13,12 @@ require("dotenv").config();
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 // app.use("/task", authMiddleware);
 app.use("/task", taskRoutes);
 app.use("/user", userRoutes);
