@@ -4,7 +4,7 @@ const app = require("../../app");
 const Task = require("../models/taskModel");
 
 const AUTH_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZlZGRkMzYzYWNlYmQ1MzFjNGViNzMiLCJpYXQiOjE3MTg2MTk3MTcsImV4cCI6MTcxODYyMzMxN30.x3cZPzIZCEbCrzpf1llDIeXcXTtELW0HSAPrdX3E9v4"; // Replace with a valid token
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZlZGRkMzYzYWNlYmQ1MzFjNGViNzMiLCJpYXQiOjE3MTg2NDM3MzgsImV4cCI6MTc1MDE3OTczOH0.Y9f5rmM9Tk3na1ihMRCp89het_JDm_2aTWN2AoN2axs"; // Replace with a valid token
 
 // Test for database connection
 beforeAll(async () => {

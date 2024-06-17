@@ -37,12 +37,8 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:5050",
-        description: "Local Development Server", // Optional description
-      },
-      {
-        url: "http://16.171.175.94",
-        description: "AWS Server", // Optional description
+        url: `${process.env.SWAGGER_URL}`,
+        description: `${process.env.SWAGGER_DESC}`, // Optional description
       },
     ],
     components: {
@@ -93,7 +89,18 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Welcome to task managemet system!");
+  res.send(
+    `Welcome to Task Management System!\n\n` +
+      `For API documentation, visit: http://16.171.175.94/api-docs/\n\n` +
+      `To set up the project locally:\n` +
+      `1. Clone the repository: git clone https://github.com/codewithfaizalsheikh/task-management-api.git\n` +
+      `2. Change to the staging branch: git checkout staging\n` +
+      `3. Install dependencies: npm install\n` +
+      `4. Setup .env file\n` +
+      `5. Start the server: nodemon\n` +
+      `\n` +
+      `For more information, check the README.md file.\n`
+  );
 });
 
 module.exports = app;
