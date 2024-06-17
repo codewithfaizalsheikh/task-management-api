@@ -28,6 +28,7 @@ A robust and scalable RESTful API for a task management system built with Node.j
 - [Running Tests](#running-tests)
 - [API Documentation](#api-documentation)
 - [Environment Variables](#environment-variables)
+- [Postman Collection](#postman-collection)
 
 ## Installation
 
@@ -78,19 +79,35 @@ nodemon
 
 ## Running Tests
 
+To run tests, use:
+
 ```bash
 npm test
 ```
 
 ## API Documentation
 
+API documentation is available via Swagger. Once the server is running, visit:
+
 ```bash
-http://localhost:5000/api-docs
+http://localhost:5050/api-docs
 ```
 
 ## Environment Variables
 
 ```bash
-DB_URI=mongodb://localhost:27017/task-manager
-PORT=5000
+DB_URI=mongodb://localhost:27017/task-management
+PORT=5050
+SECRET=yoursecretkey
 ```
+
+## Postman Collection
+
+A Postman collection is included to help you test the API. Import the TaskManager.postman_collection.json file into Postman.
+
+### Importing Postman Collection
+
+1. Open Postman.
+2. Click on the Import button.
+3. Select the TaskManager.postman_collection.json file.
+4. Click Open to import.
