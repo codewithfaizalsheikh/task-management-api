@@ -56,6 +56,15 @@ const swaggerOptions = {
     ],
   },
   apis: ["./src/routes/*.js"], // Adjust the path as needed
+  swaggerOptions: {
+    defaultModelsExpandDepth: -1,
+    validatorUrl: null,
+    cors: true,
+    docExpansion: "list",
+    apisSorter: "alpha",
+    operationsSorter: "alpha",
+    tagsSorter: "alpha",
+  },
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
