@@ -62,7 +62,6 @@ A robust and scalable RESTful API for a task management system built with Node.j
 4. Create a `.env` file in the root directory and add your MongoDB URI:
    ```env
    DB_URI=your_mongodb_uri
-   PORT=5050
    SECRET=yoursecretkey
    ```
 
@@ -98,7 +97,6 @@ http://localhost:5050/api-docs
 
 ```bash
 DB_URI=mongodb://localhost:27017/task-management
-PORT=5050
 SECRET=yoursecretkey
 ```
 
