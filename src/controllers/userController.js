@@ -33,6 +33,7 @@ exports.createUser = async (req, res) => {
       data: user,
     }); //response
   } catch (error) {
+    console.log(error);
     res.status(400).send({ error: error.message });
   }
 };
