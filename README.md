@@ -61,8 +61,10 @@ A robust and scalable RESTful API for a task management system built with Node.j
 
 4. Create a `.env` file in the root directory and add your MongoDB URI:
    ```env
-   DB_URI=your_mongodb_uri
-   SECRET=yoursecretkey
+   DB_URI=mongodb://localhost:27017/task-management
+   SECRET=taskManagement
+   SWAGGER_URL=http://localhost:5050
+   SWAGGER_DESC = Local Development Server
    ```
 
 ## Running the Server
@@ -97,7 +99,9 @@ http://localhost:5050/api-docs
 
 ```bash
 DB_URI=mongodb://localhost:27017/task-management
-SECRET=yoursecretkey
+SECRET=taskManagement
+SWAGGER_URL=http://localhost:5050
+SWAGGER_DESC = Local Development Server
 ```
 
 ## Postman Collection
