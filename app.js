@@ -37,7 +37,12 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: `${process.env.DB_URI}`,
+        url: "http://localhost:5050",
+        description: "Local Development Server", // Optional description
+      },
+      {
+        url: "http://16.171.175.94",
+        description: "AWS Server", // Optional description
       },
     ],
     components: {
