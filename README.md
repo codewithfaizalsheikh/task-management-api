@@ -29,6 +29,7 @@ A robust and scalable RESTful API for a task management system built with Node.j
 - [API Documentation](#api-documentation)
 - [Environment Variables](#environment-variables)
 - [Postman Collection](#postman-collection)
+- [Deployment](#deployment)
 
 ## Installation
 
@@ -120,7 +121,7 @@ A Postman collection is included to help you test the API. Import the TaskManage
 The API is deployed on an AWS EC2 instance. You can access the deployed API at:
 
 ```bash
-http://16.171.19.237/
+http://16.171.175.94/
 ```
 
 ### Accessing Swagger Documentation on Deployment
@@ -128,5 +129,5 @@ http://16.171.19.237/
 Visit the following URL to access the Swagger documentation for the deployed API:
 
 ```bash
-http://16.171.19.237/api-docs
+http://16.171.175.94/api-docs
 ```
