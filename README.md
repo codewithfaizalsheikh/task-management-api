@@ -63,6 +63,7 @@ A robust and scalable RESTful API for a task management system built with Node.j
    ```env
    DB_URI=your_mongodb_uri
    PORT=5050
+   SECRET=yoursecretkey
    ```
 
 ## Running the Server
