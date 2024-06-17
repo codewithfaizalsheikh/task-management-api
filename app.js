@@ -37,7 +37,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:5050",
+        url: `${process.env.DB_URI}`,
       },
     ],
     components: {

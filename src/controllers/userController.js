@@ -52,7 +52,7 @@ exports.userLogin = async (req, res) => {
         .json({ statusCode: 401, error: "Incorrect password" });
     }
     const token = jwt.sign({ userId: user._id }, process.env.SECRET, {
-      expiresIn: "1h",
+      expiresIn: "365d",
     });
     res.status(200).json({ token });
   } catch (error) {
